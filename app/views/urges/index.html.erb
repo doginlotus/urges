@@ -21,7 +21,7 @@
       <tr>
         <td><%= urge.datetime %></td>
         <td><%= urge.date %></td>
-        <td><%= urge.urge_for_id %></td>
+        <td><%= UrgeFor.where(id: urge.urge_for_id)[0].urge %></td>
         <td><%= urge.notes %></td>
         <td><%= link_to 'Show', urge %></td>
         <td><%= link_to 'Edit', edit_urge_path(urge) %></td>
