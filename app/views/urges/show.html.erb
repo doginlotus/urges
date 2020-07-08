@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @urge.datetime %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @urge.date %>
+</p>
+
+<p>
+  <strong>Urge for:</strong>
+  <%= @urge.urge_for_id %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @urge.notes %>
+</p>
+
+<%= link_to 'Edit', edit_urge_path(@urge) %> |
+<%= link_to 'Back', urges_path %>

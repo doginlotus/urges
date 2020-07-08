@@ -1,0 +1,2 @@
+class UrgeFor < ApplicationRecord
+end

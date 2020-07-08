@@ -1,0 +1,22 @@
+<%= form_with(model: urge_for, local: true) do |form| %>
+  <% if urge_for.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(urge_for.errors.count, "error") %> prohibited this urge_for from being saved:</h2>
+
+      <ul>
+        <% urge_for.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :urge %>
+    <%= form.text_field :urge %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

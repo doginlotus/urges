@@ -1,0 +1,34 @@
+<%= form_with(model: urge, local: true) do |form| %>
+  <% if urge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(urge.errors.count, "error") %> prohibited this urge from being saved:</h2>
+
+      <ul>
+        <% urge.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :datetime %>
+    <%= form.datetime_select :datetime %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :urge_for_id %>
+    <%= form.number_field :urge_for_id %>
+
+    <%= form.select :urge_for_id, UrgeFor.all.collect{ |uf| ["#{uf.urge}", uf.id] }, class: "form-control form-control-lg" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :notes %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
