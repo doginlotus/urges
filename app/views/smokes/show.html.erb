@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @smoke.datetime %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @smoke.date %>
+</p>
+
+<p>
+  <strong>What:</strong>
+  <%= @smoke.what %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @smoke.notes %>
+</p>
+
+<%= link_to 'Edit', edit_smoke_path(@smoke) %> |
+<%= link_to 'Back', smokes_path %>
