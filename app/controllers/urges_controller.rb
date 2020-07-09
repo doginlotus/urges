@@ -4,7 +4,7 @@ class UrgesController < ApplicationController
   # GET /urges
   # GET /urges.json
   def index
-    @urges = Urge.all.order(updated_at: :desc)
+    @urges = Urge.all.order(datetime: :desc)
   end
 
   # GET /urges/1

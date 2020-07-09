@@ -4,7 +4,7 @@ class SmokesController < ApplicationController
   # GET /smokes
   # GET /smokes.json
   def index
-    @smokes = Smoke.all
+    @smokes = Smoke.all.order(datetime: :desc)
   end
 
   # GET /smokes/1
