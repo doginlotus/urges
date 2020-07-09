@@ -5,6 +5,7 @@ class SmokesController < ApplicationController
   # GET /smokes.json
   def index
     @smokes = Smoke.all.order(datetime: :desc)
+    @since_last = Smoke.since_last
   end
 
   # GET /smokes/1

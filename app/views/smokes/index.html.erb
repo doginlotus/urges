@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Smokes</h1>
+<%= render partial: 'smokes/partials/since_last' %>
 <div class="mini-form-box">
   <%= link_to "+ spliff", smokes_quick_create_path(what_was_smoked: "spliff"), class: "btn btn-lg btn-success" %>
   <%= link_to "+ juul", smokes_quick_create_path(what_was_smoked: "juul"), class: "btn btn-lg btn-success" %>
