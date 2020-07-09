@@ -2,7 +2,7 @@
     <div class="nav-items-container">
       
       <div class="nav-item">
-        <%= link_to "ohme", pages_home_path, class: "nav-link" %>
+        <%= link_to "ohme. ", pages_home_path, class: "nav-link" %>
       </div>
 
       <div class="nav-item align-bottom">
@@ -18,7 +18,11 @@
       </div>
 
       <div class="nav-item">
-        <%= link_to "urgefor", urge_fors_path, class: "nav-link" %>
+        <%= link_to "+ spliff urge", urges_quick_create_path(urge_for_id: 1), class: "nav-link nav-button" %>
+      </div>
+
+      <div class="nav-item" style="margin-left: 1vw;">
+        <%= link_to "+ spliff smoked", smokes_quick_create_path(what_was_smoked: "spliff"), class: "nav-link nav-button" %>
       </div>
 
     </div>
