@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Urges</h1>
-<div class="mini-form-box">
-  <%= link_to "+ spliff", urges_quick_create_path(urge_for_id: 1), class: "btn btn-lg btn-success" %>
+<div class="rand-container">
+  <div class="rand-item" style="vertical-align: top;">
+      <%= link_to "+ spliff", urges_quick_create_path(urge_for_id: 1), class: "btn btn-lg btn-success" %>
+  </div>
+  <div class="rand-item">
+    <h1>Urges</h1>    
+  </div>
+  <div class="rand-item">
+    <%= render partial: 'urges/partials/since_last' %>
+  </div>
 </div>
 
-<table>
+
+
+
+<table class="index-table">
   <thead>
     <tr>
-      <th>Datetime</th>
+      <th>Time</th>
       <th>Date</th>
       <th>Urge for</th>
       <th>Notes</th>
@@ -19,7 +29,7 @@
   <tbody>
     <% @urges.each do |urge| %>
       <tr>
-        <td><%= urge.datetime %></td>
+        <td><%= urge.datetime.strftime("%H:%M:%S") %></td>
         <td><%= urge.date %></td>
         <td><%= UrgeFor.where(id: urge.urge_for_id)[0].urge %></td>
         <td><%= urge.notes %></td>
