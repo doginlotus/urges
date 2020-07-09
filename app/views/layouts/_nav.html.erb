@@ -1,25 +1,25 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"> ~ </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
+<nav class="navbar fixed-top bg-dark">
+    <div class="nav-items-container">
+      
+      <div class="nav-item">
         <%= link_to "ohme", pages_home_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "~", "", class: "nav-link-diabled" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "urgefor", urge_fors_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
+      </div>
+
+      <div class="nav-item align-bottom">
+        <%= link_to " ", "", class: "nav-link-diabled" %>
+      </div>
+
+      <div class="nav-item">
         <%= link_to "urges", urges_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
+      </div>
+
+      <div class="nav-item">
         <%= link_to "smokes", smokes_path, class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
+      </div>
+
+      <div class="nav-item">
+        <%= link_to "urgefor", urge_fors_path, class: "nav-link" %>
+      </div>
+
+    </div>
 </nav>
