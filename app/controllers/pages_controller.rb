@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def data
   end
+
+  def quitting
+  end
 end

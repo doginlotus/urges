@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   
 
   resources :urge_fors
-
-  get 'pages/data'
-  get 'pages/past'
   get 'pages/feed'
+  get 'pages/data'
+  get 'pages/quitting'
+  get 'pages/past'
   get 'pages/home'
+
 
 
   root 'pages#home'

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<div class="rand-container">
-  <div class="rand-item" style="vertical-align: top;">
-      <%= link_to "+ spliff", urges_quick_create_path(urge_for_id: 1), class: "btn btn-lg btn-success" %>
-  </div>
-  <div class="rand-item">
+<div class="block-container">
+  <div class="block-item">
     <h1>Urges</h1>    
   </div>
-  <div class="rand-item">
+  <div class="block-item" style="vertical-align: top;">
+      <%= link_to "+ spliff", urges_quick_create_path(urge_for_id: 1), class: "btn btn-md btn-success" %>
+  </div>
+  <div class="block-item">
     <%= render partial: 'urges/partials/since_last' %>
   </div>
 </div>
