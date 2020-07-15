@@ -53,6 +53,28 @@ class SmokesController < ApplicationController
     end
   end
 
+  def bulk_create_form
+
+    if params[:commit].nil?
+      #
+    else
+      puts "\n\n\n********\n\n\n\n"
+      @year =  params[:date]["(1i)"].to_i
+      @month =  params[:date]["(2i)"].to_i
+      @day =  params[:date]["(3i)"].to_i
+      @num = params[:qty][0].to_i
+      @what = params[:what_was_smoked]
+
+      @num.times {
+        @rand_time = DateTime.new( @year, @month, @day, rand(7..22), rand(2..58) )
+        Smoke.new(datetime: @rand_time, date: @rand_time.to_date, what: @what).save
+      }
+
+      redirect_to :smokes
+    end
+
+  end
+
   # PATCH/PUT /smokes/1
   # PATCH/PUT /smokes/1.json
   def update

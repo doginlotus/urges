@@ -1,0 +1,21 @@
+	<%= form_tag smokes_bulk_create_form_path do %>
+		<div class="form-group" align="center" style="padding-top:66px;">
+			<h3><label>date </label></h3>
+			<%= date_select :date, "",style: "width: 900px; height:44px; border: solid 1px black; border-radius:5px; background-color: #74b567;" %>
+		</div>
+
+		<div class="form-group" align="center" style="padding-top:66px;">
+			<h3><label>quantity</label></h3>
+			<%= number_field :qty, "", style: "height:44px; border: solid 1px black; border-radius:5px;"%>
+		</div>
+
+		<div class="form-group" align="center" style="padding-top:66px;">
+			<h3><label>what was smoked</label></h3>
+			<%= text_field_tag :what_was_smoked, "", style: "height:44px; border: solid 1px black; border-radius:5px;", value: "spliff" %>
+		</div>
+
+		<div align="center" style="padding: 44px;">
+			<%= submit_tag "bulk create flats", class: "btn btn-primary btn-lg" %>
+		</div>
+
+	<% end %>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
 
+  
+  get 'smokes/bulk_create_form' => 'smokes#bulk_create_form'
+  post 'smokes/bulk_create_form' => 'smokes#bulk_create_form'
   get 'smokes/quick_create' => 'smokes#quick_create'
   resources :smokes
   
