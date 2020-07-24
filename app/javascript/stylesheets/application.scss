@@ -1,6 +1,11 @@
 
 @import "~bootstrap/scss/bootstrap";
 
+/* style guide */
+$dark-color: #978B7D;
+$light-color: #C7BAA7;
+$text-color: #323232;
+
 body{
 	width: 100%;
 	padding: 8vh 4vw 4vh 4vw;
@@ -42,6 +47,35 @@ body{
 	}
 }
 
+.today-card{
+	display: block;
+	.card-header{
+		text-align: center;
+		font-style: italic;
+		background-color: $dark-color;
+		color: $text-color;
+		a {
+			color: $text-color;
+			text-decoration: none;
+		}
+		a:hover{
+			color: $text-color;
+			text-decoration: none;	
+			background-color: transparent;
+		}
+		a:visited{
+			color: $text-color;
+			text-decoration: none;	
+		}
+	}
+
+	.card-body{
+		background-color: $light-color;
+		color: $text-color;
+	}
+	
+}
+
 @media (min-width: 768px){
 	.home-card-container{
 		max-width: 100vw;
@@ -59,6 +93,20 @@ body{
 }
 
 
+.home-today-summary-table td.left{
+	/*width: 20%;*/
+}
+
+.home-today-summary-table td.right{
+	/*width: 80%;*/
+}
+
+
+/*HOMEPAGE CHART*/
+
+#chart{
+	/*width: 100%;*/
+}
 
 /*UTILITY CLASSES*/
 
