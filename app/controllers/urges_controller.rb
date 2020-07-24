@@ -44,7 +44,7 @@ class UrgesController < ApplicationController
     
     respond_to do |format|
       if @urge.save
-        format.html { redirect_to :urges, notice: 'Urge was successfully created.' }
+        format.html { redirect_back fallback_location: :urges, notice: 'Urge was successfully created.' }
         format.json { render :show, status: :created, location: @urge }
       else
         format.html { render :new }

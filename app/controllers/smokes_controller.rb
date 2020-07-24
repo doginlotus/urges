@@ -44,7 +44,7 @@ class SmokesController < ApplicationController
     
     respond_to do |format|
       if @smoke.save
-        format.html { redirect_to :smokes, notice: 'Smoke was successfully created.' }
+        format.html { redirect_back fallback_location: :smokes, notice: 'Smoke was successfully created.' }
         format.json { render :show, status: :created, location: @smoke }
       else
         format.html { render :new }
