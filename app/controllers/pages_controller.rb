@@ -13,8 +13,9 @@ class PagesController < ApplicationController
 
     # Add Column Headers
     data_table.new_column('date', 'date' )
-    data_table.new_column('number', 'Smokes')
     data_table.new_column('number', 'Urges')
+    data_table.new_column('number', 'Smokes')
+    
 
     # Add Rows and Values
     @s = Smoke.smokes_per_day(30)
@@ -22,13 +23,14 @@ class PagesController < ApplicationController
     @data = []
     @u.each{|urge_arr|
       @match = @s.select{|smoke_ar| smoke_ar[0] == urge_arr[0]}
-      @new_arr = [urge_arr[0], urge_arr[1], @match[1] ]
+      @new_arr = [urge_arr[0], urge_arr[1], @match[0][1] ]
       @data << @new_arr
     }
 
-    data_table.add_rows(@data)
-    options ={ title: 'Urges & Smokes per day', width: "100%", height: "100%", material: true, background_color: {fill: "black"} }
-    # @chart = GoogleVisualr::BarChart.new(data_table, options)
+    data_table.add_rows(@data.reject{|arr| arr[0] < Smoke.date_of_first_data })
+    options = {material: true, bars: "vertical", chart: {title: "Urges & Smokes per Day" , subtitle: "since #{}"}, colors: ["#FF9000", "#6EC5B8"] }
+    
+    
     @chart = GoogleVisualr::Interactive::BarChart.new(data_table, options)
 
   end

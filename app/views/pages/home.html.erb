@@ -9,10 +9,10 @@ what's here...
   <div class="card-header ">
     <h2 class="mb-0">
         <%= link_to "today", "#" %>
+        <p align="center"><%= @urges_today %> urges (<%= (@mins_since_last_urge / 60.0).round(0) %> mins since last). <%= @smokes_today %> smokes (<%= (@mins_since_last_smoke / 60.0).round(0) %> mins since last).</p>
     </h2>
   </div>
   <div class="card-body">
-    <p align="center"><%= @urges_today %> urges (<%= (@mins_since_last_urge / 60.0).round(0) %> mins since last). <%= @smokes_today %> smokes (<%= (@mins_since_last_smoke / 60.0).round(0) %> mins since last).</p> 
     <div class="home-viz-container">
       <div id='chart'></div>
       <%= render_chart(@chart, 'chart') %>

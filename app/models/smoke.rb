@@ -27,6 +27,10 @@ class Smoke < ApplicationRecord
     return daily_smokes
   end
 
+  def self.date_of_first_data
+    Smoke.all.order(date: :asc).first.date
+  end
+
 
   private
 
