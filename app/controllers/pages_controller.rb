@@ -18,8 +18,8 @@ class PagesController < ApplicationController
     
 
     # Add Rows and Values
-    @s = Smoke.smokes_per_day(30)
-    @u = Urge.urges_per_day(30)
+    @s = Smoke.smokes_per_day(14)
+    @u = Urge.urges_per_day(14)
     @data = []
     @u.each{|urge_arr|
       @match = @s.select{|smoke_ar| smoke_ar[0] == urge_arr[0]}
